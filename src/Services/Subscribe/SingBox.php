@@ -159,7 +159,7 @@ final class SingBox extends Base
             foreach ($singbox_group_indexes as $index) {
             $singbox_config['outbounds'][$index]['outbounds'][] = $node_raw->name;
         }
-
+    }
         $singbox_config['outbounds'] = array_merge($singbox_config['outbounds'], $nodes);
         $singbox_config['experimental']['clash_api']['cache_id'] = $_ENV['appName'];
 
