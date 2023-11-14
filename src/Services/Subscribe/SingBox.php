@@ -16,6 +16,7 @@ final class SingBox extends Base
     {
         $nodes = [];
         $singbox_config = $_ENV['SingBox_Config'];
+        $singbox_group_indexes = $_ENV['SingBox_Group_Indexes'];
         $nodes_raw = Subscribe::getSubNodes($user);
 
         foreach ($nodes_raw as $node_raw) {
@@ -154,7 +155,9 @@ final class SingBox extends Base
             }
 
             $nodes[] = $node;
-            $singbox_config['outbounds'][0]['outbounds'][] = $node_raw->name;
+
+            foreach ($singbox_group_indexes as $index) {
+            $singbox_config['outbounds'][$index]['outbounds'][] = $node_raw->name;
         }
 
         $singbox_config['outbounds'] = array_merge($singbox_config['outbounds'], $nodes);
