@@ -156,7 +156,7 @@ final class SingBox extends Base
 
             $nodes[] = $node;
 
-
+            $singbox_config['outbounds'][0]['outbounds'][] = $node_raw->name;
             $singbox_config['outbounds'][1]['outbounds'][] = $node_raw->name;
 
     }
