@@ -163,7 +163,7 @@ final class SingBox extends Base
     $singbox_nodes = [
         'outbounds' => $nodes,
     ];
-        $singbox_config['outbounds'] = array_merge($singbox_config, $singbox_nodes);
+        $singbox_config['outbounds'] = array_merge($singbox_config['outbounds'],$singbox_nodes);
         $singbox_config['experimental']['clash_api']['cache_id'] = $_ENV['appName'];
 
         return json_encode($singbox_config);
